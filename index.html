@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Temperature Calculator</title>
+
+
+</head>
+
+<body>
+  
+  <h1 style="text-align: center">Temperature Calculator</h1> <!-- Heading on Webpage -->
+
+<br><br>
+
+  <form action="/forlater.php" method="get" style="text-align: center"> <!-- Form Creation aligned centrally  -->
+  
+    <label for=>Fahrenheit:</label>   <!-- Form Creation aligne centrally -->
+    <input type='number' id='Fahrenheit' value='32' onkeyup='FahrenConvert()' onmouseup='FahrenConvert()';/>   <!-- triggers execution of Fahrenheit to Celsius javascript function as user inputs value or changes using up/down arrow -->
+    <img src='Convert.jpg' width='30' alt='conversion pic'> 
+    <label for=>Celsius:</label>
+    <input type='number' id='Celsius' value='0' onkeyup='CelsConvert()' onmouseup='CelsConvert()';/> <!-- triggers execution of Celsius to Fahrenheit javascript function as user inputs value or changes using up/down arrows -->
+    <br>
+    <br>
+    <label for=>Reset:</label>
+    <button type='button' onclick='Reset();'>Click Here</button> <!-- Button to call reset function -->
+  </form> 
+
+  <script>
+    function FahrenConvert() {
+      var FahrenToCels = (document.getElementById('Fahrenheit').value - 32) / 1.8; // Taking value from HTML id Fahrenheit, converting to Celsius and defining as new Variable FahrenToCels
+      document.getElementById('Celsius').value = FahrenToCels; // Setting HTML id Celsius value to FahrenToCels value
+    }
+    
+    function CelsConvert() {
+      var CelsToFahren = (document.getElementById('Celsius').value * 1.8) + 32;  // Taking value from HTML id Celsius, converting to Fahrenheit and defining as new Variable CelsToFahren
+      document.getElementById('Fahrenheit').value = CelsToFahren; // Setting HTML id Fahrenheit value to Fahrenheit variable
+    }
+    
+    function Reset() {  // Function to clear form and reset to original values
+      var ResetFahren = document.getElementById('Fahrenheit').value
+      var ResetCels = document.getElementById('Celsius').value
+        document.getElementById('Fahrenheit').value = "32";
+        document.getElementById('Celsius').value = "0";
+    }
+  </script>
+  
+</body>
+
+
+</html>
